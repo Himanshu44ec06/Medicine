@@ -1,0 +1,55 @@
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+
+    <div class="row">
+
+      <div class="col-md-3">    List of Medicine
+      </div>
+
+      <div class="col-md-3">
+        <input class="form-control" [(ngModel)]='SearchString' (keyup)='Search()'  placeholder="minm 3 alphabets..">
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="panel-body">
+
+    <table *ngIf='FilterList.length>0' class="table table-responsive">
+
+      <thead>
+          <tr>
+            <td><input type="checkbox" > </td>
+            <td>Name </td>
+            <td>Brand </td>
+            <td>Stock </td>
+            <td>Price </td>
+            <td>Stock Expire</td>
+          </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor='let medicine of FilterList' >
+
+        <td><input type="checkbox" > </td>
+        <td>  <a [routerLink]="['/Me', medicine.Id]">{{medicine.Name}}</a>   </td>
+        <td>{{medicine.Brand}} </td>
+        <td [style.background-color]=' medicine.Quantity < 10 ? "yellow" : "white"'>{{medicine.Quantity}} </td>
+        <td>{{medicine.Price | currency : 'USD':true:'1.2-2'}} </td>
+        <td >{{medicine.Expiry | date: 'dd/MM/yyyy'}}</td>
+
+      </tr>
+      </tbody>
+
+    </table>
+
+    <div *ngIf="FilterList.length == 0">No Result Found</div>
+
+
+
+  </div>
+
+
+
+</div>

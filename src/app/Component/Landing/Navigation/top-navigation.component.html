@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <a class="navbar-brand">Manage </a>
+    <ul class='nav navbar-nav'>
+      <li><a [routerLink]="['/Me']">Home</a></li>
+      <li><a [routerLink]="['/Me/0']">AddNew</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a>{{CurrentUser?.Name}}</a></li>
+      <li><a style="cursor: pointer" (click)="LogOut()" >Logout</a></li>
+    </ul>
+
+
+  </div>
+</nav>

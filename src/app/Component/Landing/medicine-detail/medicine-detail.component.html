@@ -1,0 +1,58 @@
+<div class="panel panel-primary" >
+
+  <div class="panel-heading" *ngIf="medicine">{{medicine?.Name}}</div>
+  <div class="panel-heading" *ngIf="!medicine">Add New Medicine</div>
+
+  <div class="panel-body">
+
+
+  <form [formGroup]='medicineForm' (submit)='Update(medicineForm.value)' >
+
+    <div class="form-group" *ngIf='!formDisable || IsNew'>
+      <label>Name</label>
+      <input type="text" formControlName='MedicineName'  class="form-control">
+    </div>
+
+    <div class="form-group" >
+      <label>Brand</label>
+      <input type="text" formControlName='MedicineBrand'  class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Stock</label>
+      <input type="text" formControlName='MedicineQuantity'  class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="number" formControlName='MedicinePrice'   class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Expiry Date</label>
+      <input type="text" formControlName='MedicineExpiry'   class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Note</label>
+      <textarea  formControlName='MedicineNote' class="form-control"></textarea>
+
+    </div>
+  </form>
+  </div>
+
+
+  <div class="panel-footer">
+
+    <button class="btn-primary" *ngIf="IsNew" (click)="Add(medicineForm.value)">Add</button>
+    <button class="btn-primary"  *ngIf='formDisable'  (click)="Back()" > Back</button>
+    <button class="btn-primary" *ngIf='formDisable && !IsNew' (click)="Edit()" > Edit</button>
+    <button class="btn-primary" *ngIf='!formDisable'   (click)="Update(medicineForm.value)" > Update</button>
+    <button class="btn-primary" *ngIf='!formDisable && !IsNew'   (click)="Cancel()" > Cancel</button>
+
+
+
+  </div>
+
+</div>
+

@@ -1,0 +1,31 @@
+[
+  {
+    "Id": 1,
+    "Name": "zxcvb",
+    "Brand": "Medicine 1",
+    "Quantity": 10,
+    "Price": 10.98,
+    "Expiry": "10/10/2018",
+    "Note": "this is  temp  Note"
+  },
+  {
+    "Id": 2,
+    "Name": "asdfg",
+    "Brand": "Medicine 2",
+    "Quantity": 20,
+    "Price": 20.28,
+    "Expiry": "10/10/2018",
+    "Note": "this is  temp  Note"
+  },
+
+  {
+    "Id": 3,
+    "Name": "qwert",
+    "Brand": "Medicine 2",
+    "Quantity": 3,
+    "Price": 3.28,
+    "Expiry": "10/10/2018",
+    "Note": "this is  temp  Note"
+  }
+
+]
